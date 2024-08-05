@@ -2,6 +2,7 @@
 import { Avatar, Box, TextField, Typography, Menu } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AvatarMenu from "./Header/AvatarMenu";
+import SearchInput from "./Header/SearchInput";
 
 export default function Header() {
   return (
@@ -9,7 +10,7 @@ export default function Header() {
       sx={{
         display: "flex",
         alignItems: "center",
-        py: 0.2,
+        py: 0.5,
         px: 1,
       }}
     >
@@ -25,7 +26,7 @@ export default function Header() {
           // gap: 3.5,
         }}
       >
-        {/* <TextField size={"small"} /> */}
+        <SearchInput />
         <NotificationsNoneIcon sx={{ fontSize: 21, mt: 0.5, ml: 3.3 }} />
         <AvatarMenu />
       </Box>
