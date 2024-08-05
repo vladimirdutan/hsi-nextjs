@@ -9,7 +9,7 @@ import { Box } from "@mui/material";
 import Sidebar from "@/src/components/layout/Sidebar";
 import { NextIntlClientProvider } from "next-intl";
 import { cookies } from "next/headers";
-import Header from "@/src/components/layout/Header";
+import Header from "@/src/components/layout";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -30,7 +30,6 @@ export default async function RootLayout({
 
   let messages;
   try {
-    console.log("locale", locale);
     messages = (await import(`../messages/${locale}.json`)).default;
   } catch (error) {
     console.error("ERRRROR");
@@ -43,7 +42,7 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AppRouterCacheProvider>
             <ThemeProvider theme={theme}>
-              <Box sx={{ display: "flex", minHeight: "100vh" }}>
+              <Box sx={{ display: "flex", height: "49vh" }}>
                 <Sidebar />
                 <Box
                   sx={{
@@ -54,7 +53,16 @@ export default async function RootLayout({
                   }}
                 >
                   <Header />
-                  <Box component="main" sx={{ flexGrow: 1 }}>
+                  <Box
+                    component="main"
+                    sx={{
+                      flexGrow: 1,
+                      height: "100vh",
+                      backgroundImage:
+                        "url(https://dev.actaport.de/Leinwand-Rahmen-Pflanze.325a361a850c6a6e.jpg)",
+                      backgroundSize: "cover",
+                    }}
+                  >
                     {children}
                   </Box>
                 </Box>

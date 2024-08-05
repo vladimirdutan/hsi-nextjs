@@ -129,25 +129,45 @@ export default function Sidebar() {
 
   return (
     <Drawer open={open} variant="permanent">
-      {open ? (
-        <Box sx={{ width: "234px", height: "51px" }}>
-          <Image
-            src={Logo}
-            alt={"logo"}
-            width={0}
-            height={0}
-            className="size-full object-cover"
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        {open ? (
+          <Box
+            // src={Logo}
+            // src={"https://dev.actaport.de/assets/logo/actaport/logo.svg"}
+            // alt={"logo"}
+            // width={0}
+            // height={1000}
+
+            sx={{
+              backgroundImage: `url(https://dev.actaport.de/assets/logo/actaport/logo.svg)`,
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundPositionY: "50%",
+              backgroundPositionX: "50%",
+              backgroundRepeat: "no-repeat",
+              boxSizing: "border-box",
+              backfaceVisibility: "hidden",
+              width: "160px",
+              height: "51px",
+            }}
           />
-        </Box>
-      ) : (
-        <Image
-          src={SmallLogo}
-          alt={"small-logo"}
-          width={0}
-          height={0}
-          className="size-full object-cover"
-        />
-      )}
+        ) : (
+          <Box
+            sx={{
+              backgroundImage: `url(https://dev.actaport.de/assets/logo/actaport/logo-icon.svg)`,
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundPositionY: "50%",
+              backgroundPositionX: "50%",
+              backgroundRepeat: "no-repeat",
+              boxSizing: "border-box",
+              backfaceVisibility: "hidden",
+              width: "32px",
+              height: "51px",
+            }}
+          />
+        )}
+      </Box>
 
       <List sx={{ pt: 0 }}>
         {sidebarItems.map((item, index) => (
