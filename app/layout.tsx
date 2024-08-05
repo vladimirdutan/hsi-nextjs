@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "@/src/theme";
 import { Box } from "@mui/material";
-import Sidebar from "@/src/components/Sidebar";
+import Sidebar from "@/src/components/layout/Sidebar";
 import { NextIntlClientProvider } from "next-intl";
 import { cookies } from "next/headers";
+import Header from "@/src/components/layout/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "700", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -34,14 +39,24 @@ export default async function RootLayout({
   }
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={lato.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AppRouterCacheProvider>
             <ThemeProvider theme={theme}>
               <Box sx={{ display: "flex", minHeight: "100vh" }}>
                 <Sidebar />
-                <Box component="main" sx={{ flexGrow: 1 }}>
-                  {children}
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                >
+                  <Header />
+                  <Box component="main" sx={{ flexGrow: 1 }}>
+                    {children}
+                  </Box>
                 </Box>
               </Box>
             </ThemeProvider>

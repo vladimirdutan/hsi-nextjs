@@ -1,7 +1,13 @@
+import { Box } from "@mui/material";
+
 export default function Header() {
   return (
-    <div>
+    <Box
+      sx={{
+        backgroundColor: "white",
+      }}
+    >
       <span>Header</span>
-    </div>
+    </Box>
   );
 }
