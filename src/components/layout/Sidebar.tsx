@@ -50,11 +50,11 @@ const sidebarSecondaryItems = [
     icon: FindInPageIcon,
     href: "/menu",
   },
-  {
-    label: "bla bla bla",
-    icon: FindInPageIcon,
-    href: "/menu",
-  },
+  // {
+  //   label: "bla bla bla",
+  //   icon: FindInPageIcon,
+  //   href: "/menu",
+  // },
 ];
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -173,6 +173,8 @@ export default function Sidebar() {
                 sx={{
                   minWidth: 0,
                   mr: 2.5,
+                  opacity: 0.85,
+
                   color: "white",
                 }}
               >
@@ -186,6 +188,7 @@ export default function Sidebar() {
                   color: "white",
                   fontSize: "14px",
                   fontWeight: 400,
+                  opacity: 0.85,
                   // mt: 1,
                 }}
               />
@@ -225,6 +228,7 @@ export default function Sidebar() {
                   minWidth: 0,
                   mr: 2.4,
                   color: "white",
+                  opacity: 0.85,
                 }}
               >
                 <StyledBadge
@@ -241,10 +245,12 @@ export default function Sidebar() {
                 disableTypography
                 sx={{
                   color: "rgb(255, 255, 255)",
-                  fontSize: "14.6px",
+                  fontSize: "14px",
                   pt: "4px",
-                  fontWeight: 500,
+                  fontWeight: 700,
                   display: "flex",
+                  opacity: ".85",
+
                   flex: 1,
                 }}
               />

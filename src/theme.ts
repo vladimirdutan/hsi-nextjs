@@ -10,7 +10,7 @@ const lato = Lato({
 
 const theme = createTheme({
     typography: {
-        fontFamily: lato.style.fontFamily,
+        fontFamily: [lato.style.fontFamily, 'sans-serif'].join(','),
     },
     palette: {
         primary: {
