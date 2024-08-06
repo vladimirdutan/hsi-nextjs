@@ -92,6 +92,7 @@ export default function AvatarMenu() {
       >
         {menuItems.map((item) => (
           <MenuItem
+            key={item.label}
             sx={{
               ":hover": {
                 backgroundColor: theme.palette.primary.main,
