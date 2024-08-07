@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { MyButton } from "./index";
-import ListAltIcon from "@mui/icons-material/ListAlt";
+
+import AssignmentIcon from "@mui/icons-material/Assignment";
 
 const meta: Meta<typeof MyButton> = {
   title: "Components/Button",
@@ -27,7 +28,6 @@ const meta: Meta<typeof MyButton> = {
 
 export default meta;
 type Story = StoryObj<typeof MyButton>;
-type Icon = StoryObj<typeof ListAltIcon>;
 
 export const Primary: Story = {
   args: {
@@ -57,6 +57,6 @@ export const IconButton: Story = {
     label: "Outlined Button",
     variant: "outlined",
     color: "primary",
-    startIcon: <ListAltIcon />,
+    startIcon: <AssignmentIcon />,
   },
 };
