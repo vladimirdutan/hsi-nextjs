@@ -11,6 +11,9 @@ const lato = Lato({
 const theme = createTheme({
     typography: {
         fontFamily: [lato.style.fontFamily, 'sans-serif'].join(','),
+        button: {
+            textTransform: 'none'
+        }
     },
     palette: {
         primary: {
@@ -24,6 +27,10 @@ const theme = createTheme({
             light: "#0187ff",
             dark: "#016fd2"
         },
+        text: {
+            primary: "hsla(0, 0%, 0%, .85)",
+            secondary: "hsla(0, 0%, 0%, .65)"
+        }
 
     }
 });
